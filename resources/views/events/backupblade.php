@@ -4,7 +4,7 @@
     <h1>Create Event</h1>
             @foreach ($events as $event)
                 
-                <li>Month:{{ $event->month }}</li>
+                
                 <li>Day:{{ $event->day }}</li>
                 <li>Time From:{{ $event->timefrom }}</li>
                 <li>Time To:{{ $event->timeto }}</li>
@@ -16,8 +16,7 @@
             
         {!! Form::model($events, ['route' => 'events.store']) !!}<br>
 
-        {!! Form::label('month', 'Month:') !!}
-        {!! Form::text('month') !!}
+       
         <br>
         {!! Form::label('day', 'Day:') !!}
         {!! Form::text('day') !!}

@@ -45,7 +45,6 @@ class EventsController extends Controller
     {
         $event = new Event;
         $event->title = $request->title;
-        $event->month = $request->month;
         $event->day = $request->day;
         $event->timefrom = $request->timefrom;
         $event->timeto = $request->timeto;
@@ -73,7 +72,6 @@ class EventsController extends Controller
     {
         $event = Event::find($id);
         $event->title = $request->title;
-        $event->month = $request->month;
         $event->day = $request->day;
         $event->timefrom = $request->timefrom;
         $event->timeto = $request->timeto;

@@ -6,20 +6,15 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateEventsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->integer('month');
-            $table->integer('day');
-            $table->integer('timefrom');
-            $table->integer('timeto');
+            $table->date('day');
+            $table->time('timefrom');
+            $table->time('timeto');
             $table->string('place');
             $table->string('theme');
             $table->string('details');

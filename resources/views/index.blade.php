@@ -1,35 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Lunch List</h1>
+    <h1>   Upcoming Lunch List</h1>
+    <div class="col-xs-6">
         @foreach ($events as $event)
-            Date : {{ $event->month }}/{{ $event->day }} {{ $event->timefrom }}-{{ $event->timeto }}
-            <br>
-            {!! link_to_route('events.show', $event->title, ['title' => $event->id]) !!}
-            <br>
-            Theme : {{ $event->theme }}
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h2 class="panel-title"><span class="glyphicon glyphicon-pencil">  About Event</span></h2>
+              </div>
+            <div class="panel-body">
+                <div class = "lead">
+                <span class="glyphicon glyphicon-search"> </span>
+                 {!! link_to_route('events.show', $event->title, ['title' => $event->id]) !!}
+                
+                 </div>
+                <br>
+                ▼ Date: {{ $event->day }} {{ $event->timefrom }}-{{ $event->timeto }}
+                <br>
+                ▼ Theme: {{ $event->theme }}
             
-           
-            
-            {!! Form::model($event, ['route' => ['events.destroy', $event->id], 'method' => 'delete']) !!}
-            {!! Form::submit('Delete') !!}
+                {!! Form::model($event, ['route' => ['events.destroy', $event->id], 'method' => 'delete']) !!}
+                <br>
+                {!! Form::submit('Delete Event', ['class' => 'btn btn-danger']) !!}
+            </div>
+            </div>
             {!! Form::close() !!}
             <br>
         @endforeach
+   
         
     
         
-        
-        {!! link_to_route('events.create', '新規Eventの投稿') !!}
+        {!! link_to_route('events.create', 'Create New Event', null, ['class' => 'btn btn-info btn-lg']) !!}
         <br>
         <br>
-        ------Debug用------
-        <br>
-        @if (Auth::check())
-            ログインしているユーザー名:{{ Auth::user()->name }}
+
+        <div class="well">
+        <h2>@if (Auth::check())
+            <span class="glyphicon glyphicon-user"> {!! link_to_route('layouts.profile', 'マイページ') !!}</span>
             <br>
-            {!! link_to_route('logout.get', 'Logout') !!}
-            {!! link_to_route('events.top', 'TOPへ戻る') !!}
+            <span class="glyphicon glyphicon-log-out"> {!! link_to_route('logout.get', 'Logout') !!}</span>
+            <br>
+            <span class="glyphicon glyphicon-home"> {!! link_to_route('events.top', 'TOPへ戻る') !!}</span>
         @else
         {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
         <br>
@@ -37,9 +49,9 @@
         <br>
         @endif
         <br>
-        ------Debug用おわり------
-        <br>
-        <br>
+        </h2>
+        
+        </div>
+ </div>
         
 @endsection
-

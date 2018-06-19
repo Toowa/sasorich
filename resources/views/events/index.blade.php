@@ -3,7 +3,7 @@
 @section('content')
     <h1>Lunch List</h1>
         @foreach ($events as $event)
-            {{ $event->month }}/{{ $event->day }} {{ $event->timefrom }}-{{ $event->timeto }}
+        /{{ $event->day }} {{ $event->timefrom }}-{{ $event->timeto }}
             <br>
             {{ $event->title }}
             <br>

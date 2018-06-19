@@ -8,8 +8,7 @@
         {!! Form::label('title', 'Title:') !!}
         {!! Form::text('title') !!}
         <br>
-        {!! Form::label('month', 'Month:') !!}
-        {!! Form::text('month') !!}
+        
         <br>
         {!! Form::label('day', 'Day:') !!}
         {!! Form::text('day') !!}
