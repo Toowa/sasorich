@@ -1,8 +1,9 @@
-
-
 @extends('layouts.app')
 
 @section('content')
+    
+    
+    
     <div class="alert alert-info" role="alert"><h1>CREATE A NEW LUNCH INVITATION</h1></div>
         <div class="col-xs-4">
             <div class="lead">
@@ -40,7 +41,7 @@
                 <div class="form-group">
                 {!! Form::label('theme', 'Theme:') !!}
                 <br>
-                {{ Form::select('theme', ['' => 'Sports','Animals' => 'Animals', 'Travel' => 'Travel', 'Beauty' => 'Beauty', 'Career' => 'Career', 'Business' => 'Business', 'Politics' => 'Politics', 'TV' => 'TV', 'Anime' => 'Anime', 'Music' => 'Music', 'Movie' => 'Movie', 'Food' => 'Food', 'Region' => 'Region', 'Global' => 'Global', 'Book' => 'Book', 'Health' => 'Health', 'Money' => 'Money', 'Others' => 'Others'], null, ['class' => 'form', 'id' => 'pref_id']) }}
+                {{ Form::select('theme', ['' => 'Select!','Sports' => 'Sports','Animals' => 'Animals', 'Travel' => 'Travel', 'Beauty' => 'Beauty', 'Career' => 'Career', 'Business' => 'Business', 'Politics' => 'Politics', 'TV' => 'TV', 'Anime' => 'Anime', 'Music' => 'Music', 'Movie' => 'Movie', 'Food' => 'Food', 'Region' => 'Region', 'Global' => 'Global', 'Book' => 'Book', 'Health' => 'Health', 'Money' => 'Money', 'Others' => 'Others'], null, ['class' => 'form', 'id' => 'pref_id']) }}
                 </div>
             
             </div>
@@ -61,6 +62,7 @@
                 </div>
                 
                 <br>
+                
                 <div class="form-group">
                 {!! Form::submit('CREATE EVENT', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}

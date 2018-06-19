@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>   Upcoming Lunch List</h1>
+    <div class=main>
     <div class="col-xs-6">
         @foreach ($events as $event)
             <div class="panel panel-info">
@@ -10,9 +11,8 @@
               </div>
             <div class="panel-body">
                 <div class = "lead">
-                <span class="glyphicon glyphicon-search"> </span>
                  {!! link_to_route('events.show', $event->title, ['title' => $event->id]) !!}
-                
+                <span class="glyphicon glyphicon-search"> </span>
                  </div>
                 <br>
                 ▼ Date: {{ $event->day }} {{ $event->timefrom }}-{{ $event->timeto }}
@@ -32,26 +32,10 @@
     
         
         {!! link_to_route('events.create', 'Create New Event', null, ['class' => 'btn btn-info btn-lg']) !!}
+        {!! link_to_route('events.profile', 'My profile', null, ['class' => 'btn btn-info btn-lg']) !!}
         <br>
         <br>
-
-        <div class="well">
-        <h2>@if (Auth::check())
-            <span class="glyphicon glyphicon-user"> {!! link_to_route('layouts.profile', 'マイページ') !!}</span>
-            <br>
-            <span class="glyphicon glyphicon-log-out"> {!! link_to_route('logout.get', 'Logout') !!}</span>
-            <br>
-            <span class="glyphicon glyphicon-home"> {!! link_to_route('events.top', 'TOPへ戻る') !!}</span>
-        @else
-        {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
-        <br>
-        {!! link_to_route('login', 'Login') !!}
-        <br>
-        @endif
-        <br>
-        </h2>
-        
-        </div>
- </div>
+    </div>
+    </div>
         
 @endsection

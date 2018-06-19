@@ -15,7 +15,6 @@
                 <div class="lead">
                     <br>
                     <ul style="list-style:none;">
-                    
                     <li>
                     <span class="glyphicon glyphicon-calendar"></span>
                     &nbsp;&nbsp;{{ $events->month }}{{ $events->day }}

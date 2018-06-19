@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+    
     <h1>Lunch</h1>
             
         {!! Form::model($events, ['route' => 'events.index']) !!}<br>
@@ -35,4 +44,6 @@
     {!! Form::close() !!}
     
             {!! link_to_route('events.index', 'TOPへ戻る') !!}
+
+
 @endsection
