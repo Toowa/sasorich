@@ -2,8 +2,6 @@
 
 @section('content')
     
-    
-    
     <div class="alert alert-info" role="alert"><h1>CREATE A NEW LUNCH INVITATION</h1></div>
         <div class="col-xs-4">
             <div class="lead">

@@ -31,8 +31,8 @@
         
     
         
-        {!! link_to_route('events.create', 'Create New Event', null, ['class' => 'btn btn-info btn-lg']) !!}
-        {!! link_to_route('events.profile', 'My profile', null, ['class' => 'btn btn-info btn-lg']) !!}
+        <?php //{!! link_to_route('events.create', 'Create New Event', null, ['class' => 'btn btn-info btn-lg']) !!}
+        //{!! link_to_route('events.profile', 'My profile', null, ['class' => 'btn btn-info btn-lg']) !!} ?>
         <br>
         <br>
     </div>
